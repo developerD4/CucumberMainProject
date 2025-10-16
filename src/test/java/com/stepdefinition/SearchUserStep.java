@@ -22,23 +22,26 @@ public class SearchUserStep {
     String searchRole = ReadConfig.readPropertyFileData("searchRole", "config");
     String searchStatus = ReadConfig.readPropertyFileData("searchStatus", "config");
 
-    @Given("user is logged in to search")
-    public void user_is_logged_in_to_search() {
+    @Given("user is logged in to search for a user")
+    public void user_is_logged_in_to_search_for_a_user() {
         driver.get(baseUrl);
         loginPage = new LoginPage(driver);
         loginPage.loginCre(username, password);
+
         adminPage = new AdminPage(driver);
-        adminPage.openAdminSection();
+        adminPage.openAdminSection(); // ✅ Ensure Admin tab is clicked
+
         searchUserPage = new SearchUserPage(driver);
     }
 
-    @When("user is searched by username, role and status")
-    public void user_is_searched_by_username_role_and_status() {
+    @When("the user is searched")
+    public void the_user_is_searched() {
         searchUserPage.searchUser(searchUsername, searchRole, searchStatus);
     }
 
-    @Then("search results should show the user")
-    public void search_results_should_show_the_user() {
-        System.out.println("User found in search results.");
+    @Then("the user should be visible in the search results")
+    public void the_user_should_be_visible_in_the_search_results() {
+        System.out.println("Search completed. User should be visible.");
+        // Optional: Add assertion logic here
     }
 }

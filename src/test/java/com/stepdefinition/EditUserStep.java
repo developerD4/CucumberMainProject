@@ -21,8 +21,8 @@ public class EditUserStep {
     String targetUsername = ReadConfig.readPropertyFileData("newUserName", "config");
     String newStatus = ReadConfig.readPropertyFileData("newStatus", "config");
 
-    @Given("user is logged in to edit")
-    public void user_is_logged_in_to_edit() {
+    @Given("user is logged in to edit user status")
+    public void user_is_logged_in_to_edit_user_status() {
         driver.get(baseUrl);
         loginPage = new LoginPage(driver);
         loginPage.loginCre(username, password);
@@ -31,13 +31,13 @@ public class EditUserStep {
         editUserPage = new EditUserPage(driver);
     }
 
-    @When("user status is updated")
-    public void user_status_is_updated() {
+    @When("the user status is edited")
+    public void the_user_status_is_edited() {
         editUserPage.editUserStatus(targetUsername, newStatus);
     }
 
-    @Then("updated status should be reflected")
-    public void updated_status_should_be_reflected() {
+    @Then("the updated status should be reflected")
+    public void the_updated_status_should_be_reflected() {
         System.out.println("User status updated.");
     }
 }
