@@ -1,3 +1,4 @@
+@FifthDelete
 Feature: Delete User
 
   Scenario: Delete an existing user

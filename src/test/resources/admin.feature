@@ -1,4 +1,6 @@
+@SecondAdmin
 Feature: Admin Page
+
 
   Scenario: Add a new user
     Given the application is open and user is logged in

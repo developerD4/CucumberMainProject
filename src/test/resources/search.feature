@@ -1,4 +1,6 @@
+@ThirdSearch
 Feature: Search User
+
 
   Scenario: Search for an existing user
     Given user is logged in to search for a user
