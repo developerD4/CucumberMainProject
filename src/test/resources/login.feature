@@ -1,3 +1,4 @@
+@FirstLogin
 Feature: OrangeHRM User Login
   
   Scenario: Successful login with valid credentials

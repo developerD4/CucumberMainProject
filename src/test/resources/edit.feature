@@ -1,3 +1,4 @@
+@FourthEdit
 Feature: Edit User
 
   Scenario: Edit user status
