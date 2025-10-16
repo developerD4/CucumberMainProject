@@ -1,7 +1,11 @@
 package com.stepdefinition;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.pages.LoginPage;
 import com.utils.ReadConfig;
 import com.utils.TestBase;
@@ -9,6 +13,8 @@ import com.utils.TestBase;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import java.time.Duration;
 
 public class LoginStep {
 	
@@ -32,8 +38,17 @@ public class LoginStep {
 
 	@Then("the user should be redirected to the OrangeHRM dashboard")
 	public void the_user_should_be_redirected_to_the_orange_hrm_dashboard() {
-	    String actualTitle = driver.getTitle();
-	    Assert.assertTrue("Login failed or dashboard not loaded", actualTitle.contains("Dashboard"));
-	
+		// Wait until dashboard element is visible
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		
+		try {
+			// Example: Wait for header or title element that uniquely identifies the Dashboard
+			wait.until(ExpectedConditions.visibilityOfElementLocated(
+				By.xpath("//h6[text()='Dashboard']")  // Adjust this XPath as per your actual Dashboard header
+			));
+			Assert.assertTrue("User is on Dashboard", true);
+		} catch (Exception e) {
+			Assert.fail("Login failed or Dashboard not loaded: " + e.getMessage());
+		}
 	}
 }
