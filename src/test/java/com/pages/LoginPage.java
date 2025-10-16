@@ -44,15 +44,3 @@ public class LoginPage {
 	}
 }
 
-
-
-
-
-
-
-
-//WebElement usernameId = driver.findElement(By.name("username"));
-//usernameId.sendKeys(username);
-//WebElement passwordId = driver.findElement(By.name("password"));
-//passwordId.sendKeys(password);
-//driver.findElement(By.tagName("button")).click();

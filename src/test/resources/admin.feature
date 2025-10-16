@@ -7,5 +7,3 @@ Feature: Admin Page
     And user details are entered 
     And the Save button is clicked
     Then the new user should appear in the user list
-
-  
