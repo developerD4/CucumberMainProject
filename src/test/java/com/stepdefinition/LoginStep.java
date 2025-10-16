@@ -42,7 +42,7 @@ public class LoginStep {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		
 		try {
-			// Example: Wait for header or title element that uniquely identifies the Dashboard
+			
 			wait.until(ExpectedConditions.visibilityOfElementLocated(
 				By.xpath("//h6[text()='Dashboard']")  // Adjust this XPath as per your actual Dashboard header
 			));
