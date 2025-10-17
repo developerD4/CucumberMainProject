@@ -26,7 +26,8 @@ public class AdminStep {
     String newUserConfirmPassword = ReadConfig.readPropertyFileData("newUserConfirmPassword", "config");
 
     @Given("the application is open and user is logged in")
-    public void the_application_is_open_and_user_is_logged_in() {
+    public void the_application_is_open_and_user_is_logged_in() 
+    {
         if (baseUrl == null || username == null || password == null) {
             throw new RuntimeException("Missing login configuration values.");
         }
