@@ -18,10 +18,10 @@ public class TestBase {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(baseURL);
 	}
-	@After
-	public void tearDown() {
-		driver.quit();
-	}
+//	@After
+//	public void tearDown() {
+//		driver.quit();
+//	}
 	public static WebDriver getDriver() {
 		return driver;
 	}
