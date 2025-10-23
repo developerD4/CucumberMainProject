@@ -10,7 +10,7 @@ import io.cucumber.junit.Cucumber;
 	features = "./src/test/resources",
 	glue = {"com.stepdefinition", "com.utils"},
 	plugin = {
-					"pretty", "html:target/htmltestreport.html",
+					"pretty", 
 					"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
 					
 			}
