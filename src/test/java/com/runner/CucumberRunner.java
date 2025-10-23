@@ -10,7 +10,8 @@ import io.cucumber.junit.Cucumber;
 	features = "./src/test/resources",
 	glue = {"com.stepdefinition", "com.utils"},
 	plugin = {
-					"pretty", "html:target/htmltestreport.html"
+				     "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
+					 "pretty", "html:target/htmltestreport.html"
 			}
 )
 public class CucumberRunner {
