@@ -17,6 +17,7 @@ public class TestBase {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(baseURL);
+		System.out.println("Opening");
 	}
 	@After
 	public void tearDown() {
